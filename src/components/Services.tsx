@@ -1,14 +1,9 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { BookButton, QualifyButton } from "@/components/CTAButtons";
-import { CheckIcon, PlayIcon, XIcon } from "@/components/Icons";
-import VideoTrigger from "@/components/VideoTrigger";
-import {
-  COMPARE,
-  SERVICES,
-  SERVICES_SECTION_ID,
-  VIDEO_ROW,
-} from "@/lib/constants";
+import { CheckIcon, XIcon } from "@/components/Icons";
+import VideoRow from "@/components/VideoRow";
+import { COMPARE, SERVICES, SERVICES_SECTION_ID } from "@/lib/constants";
 
 export default function Services() {
   return (
@@ -130,37 +125,7 @@ export default function Services() {
             <p className="eyebrow">See it explained</p>
             <h3>Watch how TMS works, and what it changed for one patient.</h3>
           </Reveal>
-          <ul className="videos-row">
-            {VIDEO_ROW.map((video, index) => (
-              <li key={video.id}>
-                <Reveal delay={(index + 1) as 1 | 2 | 3}>
-                  <VideoTrigger
-                    videoId={video.id}
-                    title={video.title}
-                    className="video-card"
-                  >
-                    <span className="video-thumb">
-                      <Image
-                        quality={95}
-                        src={video.thumb}
-                        alt=""
-                        fill
-                        sizes="(max-width: 760px) 100vw, 600px"
-                        placeholder="blur"
-                      />
-                      <span className="play-disc play-disc-lg">
-                        <PlayIcon className="icon-md" />
-                      </span>
-                    </span>
-                    <span className="video-cap">
-                      <strong>{video.title}</strong>
-                      <small>{video.meta}</small>
-                    </span>
-                  </VideoTrigger>
-                </Reveal>
-              </li>
-            ))}
-          </ul>
+          <VideoRow />
           <p className="fineprint">
             Each patient story is one person&rsquo;s own experience. Results
             vary.
