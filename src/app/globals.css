@@ -67,7 +67,8 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  /* clip, not hidden: hidden would turn body into a scroll box and stop sticky columns from sticking */
+  overflow-x: clip;
 }
 
 h1,
