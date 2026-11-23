@@ -53,6 +53,8 @@
 }
 
 html {
+  /* Nothing may widen the page sideways (off-screen reveal offsets, glows) */
+  overflow-x: clip;
   scroll-behavior: smooth;
   scroll-padding-top: calc(var(--header-h) + 28px);
 }
@@ -2221,49 +2223,6 @@ a.contact-item:hover {
   gap: 22px;
 }
 
-/* Mobile sticky bar */
-
-.mobile-bar {
-  position: fixed;
-  inset: auto 10px 10px;
-  z-index: 45;
-  display: none;
-  gap: 8px;
-  padding: 8px;
-  border-radius: 999px;
-  background: rgba(11, 14, 31, 0.92);
-  box-shadow: 0 18px 44px -16px rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(12px);
-  transform: translateY(140%);
-  transition: transform 0.45s var(--ease);
-}
-
-.mobile-bar.is-visible {
-  transform: none;
-}
-
-.mobile-bar a {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 13px 18px;
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.mobile-bar-call {
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--white);
-}
-
-.mobile-bar-book {
-  flex: 1;
-  background: linear-gradient(135deg, #f3df8a, var(--gold-light) 45%, #cda544);
-  color: var(--navy-900);
-}
 
 /* Motion */
 
@@ -2918,6 +2877,70 @@ a.contact-item:hover {
     aspect-ratio: 5 / 3.6;
   }
 
+  /* Stacked layout: section copy is centred, like the hero. Lists stay left-aligned inside a centred block. */
+  .section-head,
+  .service-copy,
+  .evidence-copy,
+  .doctor-copy,
+  .insurance-copy,
+  .embed-copy,
+  .faq-head,
+  .glance-head,
+  .glance-note,
+  .videos-head,
+  .videos .fineprint,
+  .cond-panel {
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .section-head .lead,
+  .service-desc,
+  .evidence-copy .lead,
+  .doctor-copy .lead,
+  .insurance-copy .lead,
+  .embed-copy .lead,
+  .faq-head .lead,
+  .videos-head h3 {
+    margin-inline: auto;
+  }
+
+  .service-actions,
+  .evidence-ctas,
+  .cond-actions,
+  .embed-actions,
+  .cta-row {
+    justify-content: center;
+  }
+
+  .service-points,
+  .check-list,
+  .embed-points,
+  .steps {
+    width: fit-content;
+    max-width: 100%;
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  .cond-stats,
+  .service-facts {
+    text-align: left;
+  }
+
+  .faq-head .btn {
+    margin-inline: auto;
+  }
+
+  /* Stacked layout: reveal upward, never sideways, so nothing pokes past the screen edge */
+  .service-media-wrap.reveal:not(.is-visible),
+  .is-flipped .service-media-wrap.reveal:not(.is-visible),
+  .service-copy.reveal:not(.is-visible),
+  .is-flipped .service-copy.reveal:not(.is-visible),
+  .doctor-media.reveal:not(.is-visible) {
+    transform: translateY(26px);
+  }
+
   .hero-overlay {
     background: linear-gradient(
       180deg,
@@ -3075,6 +3098,11 @@ a.contact-item:hover {
     width: 100%;
   }
 
+  /* Phones already have Call in the header and the sticky bottom bar */
+  .hero-ctas a[href^="tel:"] {
+    display: none;
+  }
+
   .hero {
     min-height: 0;
   }
@@ -3138,14 +3166,6 @@ a.contact-item:hover {
   .cond-actions .btn,
   .evidence-ctas .btn {
     width: 100%;
-  }
-
-  .mobile-bar {
-    display: flex;
-  }
-
-  .site-footer {
-    padding-bottom: 96px;
   }
 }
 
