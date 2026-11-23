@@ -1766,10 +1766,10 @@ a {
 }
 
 .plans-list img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-  max-height: 100%;
+  /* Fixed box so a logo can never grow past its tile, whatever the tile width */
+  width: 100%;
+  max-width: 130px;
+  height: 44px;
   object-fit: contain;
 }
 
@@ -3155,5 +3155,117 @@ a.contact-item:hover {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+}
+
+/* Tablet and phone: one consistent centred, stacked layout */
+@media (max-width: 960px) {
+  .doctor-media,
+  .evidence-media {
+    margin-inline: auto;
+  }
+
+  .contact-list {
+    max-width: 520px;
+    margin-inline: auto;
+  }
+
+  .contact-item {
+    text-align: left;
+  }
+
+  /* Clinics: keep cards the same width and centre an incomplete last row */
+  .locations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .locations li {
+    flex: 0 1 calc((100% - 28px) / 3);
+    min-width: 200px;
+  }
+
+  .location-card {
+    align-items: center;
+    text-align: center;
+  }
+
+  .bento-5 .bento-media {
+    aspect-ratio: 16 / 6.4;
+  }
+
+  .footer-grid,
+  .footer-legal,
+  .crisis {
+    text-align: center;
+  }
+
+  .footer-brand img,
+  .footer-brand p {
+    margin-inline: auto;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 960px) {
+  /* Every checklist and step list: same width, same left edge, centred as a block */
+  .service-points,
+  .check-list,
+  .embed-points,
+  .steps {
+    width: min(100%, 560px);
+    margin-inline: auto;
+    text-align: left;
+  }
+
+  /* Every stacked photo: same maximum width, centred */
+  .service-media-wrap,
+  .doctor-media,
+  .evidence-media {
+    width: 100%;
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .doctor-media {
+    max-width: 460px;
+  }
+
+  .service-facts,
+  .plans,
+  .cond,
+  .glance {
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  /* Who we help: one card per row so the text sits below the faces, not over them */
+  .audience {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 620px;
+    margin-inline: auto;
+  }
+
+  .audience-card {
+    min-height: 420px;
+  }
+
+  .audience-card::after {
+    background: linear-gradient(180deg, rgba(11, 14, 31, 0) 38%, rgba(11, 14, 31, 0.94) 82%);
+  }
+}
+
+@media (max-width: 560px) {
+  .locations li {
+    flex-basis: 100%;
+  }
+
+  .bento-5 .bento-media {
+    aspect-ratio: 16 / 9;
   }
 }

@@ -241,8 +241,8 @@ export const APPROACH_STEPS = [
     title: "Every pulse, steered to your target",
     body: "An infrared camera tracks your head in real time and guides the coil to the point planned on your own MRI, and back to it every session. You sit in a recliner, awake, and go on with your day afterward.",
     image: IMAGES.session,
-    alt: "A patient relaxing in a recliner during a navigated TMS session.",
-    tag: "Neuro-navigated TMS",
+    alt: "A patient relaxing in a recliner while a clinician holds a TMS coil to her head.",
+    tag: "TMS session",
   },
   {
     step: "05",
