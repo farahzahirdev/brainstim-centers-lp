@@ -1,9 +1,9 @@
 import insAetna from "../../public/images/insurance/aetna.svg";
 import insAnthem from "../../public/images/insurance/anthem.png";
-import insBlueCross from "../../public/images/insurance/blue-cross.png";
 import insBlueShieldCa from "../../public/images/insurance/blue-shield-ca.png";
 import insCigna from "../../public/images/insurance/cigna.svg";
 import insMagellan from "../../public/images/insurance/magellan.png";
+import insMhn from "../../public/images/insurance/mhn.png";
 import insMedicare from "../../public/images/insurance/medicare.png";
 import insOptum from "../../public/images/insurance/optum.svg";
 import insTricare from "../../public/images/insurance/tricare.svg";
@@ -397,16 +397,14 @@ export const AUDIENCES = [
   },
 ] as const;
 
-/** Logo is null where we have no clean logo file; the name shows as text instead. */
 export const INSURERS = [
   { name: "Aetna", logo: insAetna },
-  { name: "Anthem", logo: insAnthem },
-  { name: "Blue Cross", logo: insBlueCross },
+  { name: "Anthem Blue Cross", logo: insAnthem },
   { name: "Blue Shield of California", logo: insBlueShieldCa },
   { name: "Cigna", logo: insCigna },
   { name: "Magellan Health", logo: insMagellan },
   { name: "Medicare", logo: insMedicare },
-  { name: "MHN", logo: null },
+  { name: "MHN, a Health Net company", logo: insMhn },
   { name: "Optum", logo: insOptum },
   { name: "TRICARE", logo: insTricare },
   { name: "TriWest", logo: insTriwest },

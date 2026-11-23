@@ -49,7 +49,12 @@ export default function Insurance() {
             {INSURERS.map((insurer) => (
               <li key={insurer.name}>
                 {insurer.logo ? (
-                  <Image src={insurer.logo} alt={insurer.name} sizes="160px" />
+                  <Image
+                    src={insurer.logo}
+                    alt={insurer.name}
+                    quality={95}
+                    sizes="280px"
+                  />
                 ) : (
                   <span>{insurer.name}</span>
                 )}
