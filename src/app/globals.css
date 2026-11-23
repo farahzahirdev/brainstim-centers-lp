@@ -3223,6 +3223,22 @@ a.contact-item:hover {
     text-align: left;
   }
 
+  /* Step numbers: closer in size to the checkmarks used in the other lists */
+  .steps {
+    gap: 16px;
+  }
+
+  .steps li {
+    gap: 12px;
+  }
+
+  .steps-num {
+    width: 26px;
+    height: 26px;
+    margin-top: 1px;
+    font-size: 0.9rem;
+  }
+
   /* Every stacked photo: same maximum width, centred */
   .service-media-wrap,
   .doctor-media,
