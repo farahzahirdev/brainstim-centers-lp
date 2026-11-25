@@ -25,6 +25,7 @@ import veteranImg from "../../public/images/veteran.jpg";
 import videoLikerImg from "../../public/images/videos/liker-explains.jpg";
 import videoSmartfocusImg from "../../public/images/videos/smartfocus.jpg";
 import videoStoryImg from "../../public/images/videos/story-john.jpg";
+import videoStoryKatImg from "../../public/images/videos/story-kat.jpg";
 
 export const SITE_NAME = "BrainStim Centers";
 export const SITE_SHORT = "BrainStim";
@@ -82,12 +83,8 @@ export const CALENDAR_ID = "NOhXkZBypjHrzJMxSxd1";
 /** Must start with a letter: form_embed.js builds a CSS selector from this id. */
 export const CALENDAR_IFRAME_ID = "b6SixYOqTtIxpDyQuOJB_1795207757604";
 
-/**
- * TODO before launch: replace with the Twilio tracking number.
- * The clinic’s new-patient line is used as a placeholder.
- */
-export const PHONE_NUMBER = "(310) 895-7122";
-export const PHONE_HREF = "tel:+13108957122";
+export const PHONE_NUMBER = "(818) 583-8034";
+export const PHONE_HREF = "tel:+18185838034";
 
 export const HOURS_LABEL = "Monday to Friday, 8 am to 5 pm";
 
@@ -138,14 +135,9 @@ export const CONDITIONS: readonly Condition[] = [
         source: "STAR*D trial, 2,876 patients (Trivedi et al., 2006)",
       },
       {
-        value: "58 in 100",
-        label: "responded to TMS after medication hadn’t helped",
-        source: "307 patients at 42 US clinics (Carpenter et al., 2012)",
-      },
-      {
-        value: "37 in 100",
-        label: "were close to symptom-free by the end of treatment",
-        source: "307 patients at 42 US clinics (Carpenter et al., 2012)",
+        value: "84%",
+        label: "of our patients have a 50% reduction in symptoms, across age and gender",
+        source: "BrainStim Centers patient outcomes",
       },
     ],
   },
@@ -274,9 +266,15 @@ export const VIDEOS = {
     meta: "Patient story · 4:58",
     thumb: videoStoryImg,
   },
+  storyKat: {
+    id: "hpaTUFk3P8U",
+    title: "Kat: depression",
+    meta: "Patient story · 3:16",
+    thumb: videoStoryKatImg,
+  },
 } as const;
 
-export const VIDEO_ROW = [VIDEOS.smartfocus, VIDEOS.liker, VIDEOS.story] as const;
+export const VIDEO_ROW = [VIDEOS.smartfocus, VIDEOS.liker, VIDEOS.story, VIDEOS.storyKat] as const;
 
 export const SERVICES = [
   {
@@ -297,6 +295,10 @@ export const SERVICES = [
       { label: "Course", value: "5 a week, 6 weeks" },
       { label: "Anesthesia", value: "None" },
     ],
+    coverage: {
+      covered: true,
+      text: "Covered by most major commercial insurance, as long as you meet your insurer’s criteria.",
+    },
     image: IMAGES.coil,
     imageAlt:
       "A patient at BrainStim during a navigated TMS session, the coil guided to the point planned on her own brain.",
@@ -313,13 +315,17 @@ export const SERVICES = [
       "Fifty short sessions in a single week",
       "Rest, read or step out between sessions",
       "Can suit people who can’t come in daily for weeks, or who travel to us",
-      "Coverage varies by plan, so we check yours before anything is booked",
+      "Not currently accepted by insurance, so it is paid out of pocket",
     ],
     facts: [
       { label: "Per day", value: "10 sessions" },
       { label: "Each session", value: "10 to 15 min" },
       { label: "Course", value: "5 days" },
     ],
+    coverage: {
+      covered: false,
+      text: "Not currently accepted by insurance. Accelerated TMS is paid out of pocket, and we explain the cost before anything is booked.",
+    },
     image: IMAGES.accelerated,
     imageAlt: "Two clinicians reviewing a 3D brain model on a screen while a patient is prepared for TMS.",
     imagePosition: "38% center",
@@ -342,6 +348,7 @@ export const SERVICES = [
       { label: "Reviewed by", value: "A neurosurgeon" },
       { label: "Progress", value: "Measured" },
     ],
+    coverage: null,
     image: IMAGES.mapping,
     imageAlt: "A physician reviewing brain scans with a patient at a table.",
     imagePosition: "100% center",
@@ -441,7 +448,7 @@ export const FAQS = [
   },
   {
     q: "How long does a course of treatment take?",
-    a: "Typically five sessions a week for about six weeks, or as your provider prescribes. For some people an accelerated schedule is an option: ten short sessions a day for five days. It isn’t right for everyone, and we’ll talk through whether it fits you.",
+    a: "Typically five sessions a week for about six weeks, or as your provider prescribes. For some people an accelerated schedule is an option: ten short sessions a day for five days. Accelerated TMS isn’t currently accepted by insurance, so it is paid out of pocket. It isn’t right for everyone, and we’ll talk through whether it fits you.",
   },
   {
     q: "Are there side effects or risks?",
@@ -449,7 +456,7 @@ export const FAQS = [
   },
   {
     q: "Will my insurance cover it?",
-    a: "Most commercial insurance plans have a policy that covers TMS for major depression, usually after other treatments haven’t helped. Coverage for other conditions and for accelerated schedules is reviewed plan by plan and may be self-pay. We check your plan first, at no cost, and explain any costs before anything is booked.",
+    a: "Daily TMS treatment is covered by most major commercial insurance, as long as you meet your insurer’s criteria. Accelerated TMS is not currently accepted by insurance and is paid out of pocket. We check your plan first, at no cost, and explain any costs before anything is booked.",
   },
   {
     q: "Do I need a diagnosis or a referral to talk to you?",

@@ -21,7 +21,6 @@ Colors, type and photography follow [brainstimcenters.com](https://www.brainstim
 
 ## Before launch
 
-- Replace `PHONE_NUMBER` / `PHONE_HREF` in `src/lib/constants.ts` with the Twilio tracking number. The clinic's new-patient line is a placeholder.
 - The brief says the Book CTA links to `brainstimcenters.com/consult.html`, but a calendar embed was also supplied. The page books on-page by default. To send visitors to the client's page instead, change `BOOK_HREF` in `src/lib/constants.ts`.
 - The supplied form is named "TMS: New Web Inquiry + Params - Memory". Confirm it is the right form for this page.
 - Clinical stats and insurer names are taken from the client's own site. Have the client confirm them.

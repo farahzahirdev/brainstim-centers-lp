@@ -14,7 +14,7 @@ export default function VideoRow() {
     <ul className="videos-row">
       {VIDEO_ROW.map((video, index) => (
         <li key={video.id}>
-          <Reveal delay={(index + 1) as 1 | 2 | 3}>
+          <Reveal delay={((index % 3) + 1) as 1 | 2 | 3}>
             <div className="video-card">
               {playing === video.id ? (
                 <div className="video-thumb">

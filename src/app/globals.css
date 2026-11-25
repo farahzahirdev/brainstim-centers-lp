@@ -1401,6 +1401,33 @@ a {
   line-height: 1.2;
 }
 
+.service-coverage {
+  margin-top: 16px;
+  padding: 12px 16px;
+  border-left: 3px solid var(--blue);
+  border-radius: var(--radius-sm);
+  background: var(--mist);
+  color: var(--slate);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  text-align: left;
+}
+
+.service-coverage strong {
+  display: block;
+  margin-bottom: 2px;
+  color: var(--navy);
+  font-size: var(--fs-label);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.service-coverage.is-self-pay {
+  border-left-color: var(--gold-light);
+  background: var(--gold-pale);
+}
+
 .service-actions {
   display: flex;
   flex-wrap: wrap;
@@ -2525,8 +2552,14 @@ a.contact-item:hover {
 
 .videos-row {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 20px;
+}
+
+@media (max-width: 1100px) {
+  .videos-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 .video-card {

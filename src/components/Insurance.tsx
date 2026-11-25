@@ -16,10 +16,10 @@ export default function Insurance() {
           <p className="eyebrow">Insurance</p>
           <h2>We check your coverage before anything is booked.</h2>
           <p className="lead">
-            Most commercial plans have a policy that covers TMS for major
-            depression, usually after other treatments haven&rsquo;t helped. If
-            your plan doesn&rsquo;t cover it, we&rsquo;ll tell you plainly and
-            explain the self-pay options first.
+            Daily TMS treatment is covered by most major commercial insurance,
+            as long as you meet your insurer&rsquo;s criteria. Accelerated TMS
+            is not currently accepted by insurance and is paid out of pocket.
+            Either way, we&rsquo;ll tell you plainly what to expect first.
           </p>
 
           <ol className="steps">

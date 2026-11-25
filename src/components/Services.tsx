@@ -68,6 +68,17 @@ export default function Services() {
                   ))}
                 </dl>
 
+                {service.coverage && (
+                  <p
+                    className={`service-coverage${service.coverage.covered ? "" : " is-self-pay"}`}
+                  >
+                    <strong>
+                      {service.coverage.covered ? "Insurance" : "Self-pay"}
+                    </strong>
+                    {service.coverage.text}
+                  </p>
+                )}
+
                 <div className="service-actions">
                   <BookButton variant="navy" />
                   <QualifyButton variant="outline" />
@@ -123,7 +134,7 @@ export default function Services() {
         <div className="videos">
           <Reveal className="videos-head">
             <p className="eyebrow">See it explained</p>
-            <h3>Watch how TMS works, and what it changed for one patient.</h3>
+            <h3>Watch how TMS works, and what it changed for our patients.</h3>
           </Reveal>
           <VideoRow />
           <p className="fineprint">
